@@ -19,6 +19,18 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
+// Add routes, both API and view
+// app.use(routes);
+
+// Connect to the Mongo DB
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://<dbuser>:<dbpassword>@ds335648.mlab.com:35648/heroku_zl321lvx",
+  {
+    useCreateIndex: true,
+    useNewUrlParser: true
+  }
+);
+
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
 });
