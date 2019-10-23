@@ -16,13 +16,14 @@ class App extends Component {
         <Header />
         <Search />
         {/* <Content /> */}
-        {/* <Item /> */}
         <div className="App-header">
-        <h2>Welcome to React</h2>
+        <Item />
         </div>
-        <p className="App-intro">
-          This is where to put the movie information.
-        </p>
+
+         <button className="btn btn-md btn-secondary">
+          Saved Movies
+          </button>
+        
         <Footer />
       </div>
     );
