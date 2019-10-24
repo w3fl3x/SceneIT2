@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
+// const mongoose = require('mongoose');
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -23,13 +24,13 @@ app.get("*", (req, res) => {
 // app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://<dbuser>:<dbpassword>@ds335648.mlab.com:35648/heroku_zl321lvx",
-  {
-    useCreateIndex: true,
-    useNewUrlParser: true
-  }
-);
+// mongoose.connect(
+//   process.env.MONGODB_URI || "mongodb://<dbuser>:<dbpassword>@ds335648.mlab.com:35648/heroku_zl321lvx",
+//   {
+//     useCreateIndex: true,
+//     useNewUrlParser: true
+//   }
+// );
 
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
