@@ -32,11 +32,12 @@ class Navbar extends Component {
 
     render() {
         return(
-            <nav className='navbar navbar-expand-lg .navbar-collapse'>
-                <Link className="name" to="/">
-                    SceneIT2
-                </Link>
-                <div className="navbar-link collapse navbar-collapse" id="navbarNav">
+          <nav className='navbar navbar-expand-lg .navbar-collapse'>
+            <Link className="name" to="/">
+              SceneIT2
+            </Link>
+            <div className="navbar-link collapse navbar-collapse" id="navbarNav">
+              <ul className="navbar-nav w-100 justify-content-end">
                 <Link
                   onClick={this.toggleNav}
                   className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}
@@ -51,42 +52,43 @@ class Navbar extends Component {
                   >
                   Saved
                 </Link>
-                </div>
-                {/* <button
+              </ul>
+            </div>
+            {/* <button
+                onClick={this.toggleNav}
+                className="navbar-toggler"
+                data-toggle="collapse"
+                data-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span className="navbar-toggler-icon" />
+            </button>
+            <div className={`${this.state.open ? "" : "collapse "}navbar-collapse`} id="navbarNav">
+                <ul className="navbar-nav">
+                <li className="nav-item">
+                    <Link
                     onClick={this.toggleNav}
-                    className="navbar-toggler"
-                    data-toggle="collapse"
-                    data-target="#navbarNav"
-                    aria-controls="navbarNav"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                >
-                    <span className="navbar-toggler-icon" />
-                </button>
-                <div className={`${this.state.open ? "" : "collapse "}navbar-collapse`} id="navbarNav">
-                    <ul className="navbar-nav">
-                    <li className="nav-item">
-                        <Link
-                        onClick={this.toggleNav}
-                        className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}
-                        to="/"
-                        >
-                        Home
-                        </Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link
-                        onClick={this.toggleNav}
-                        className={window.location.pathname === "/saved" ? "nav-link active" : "nav-link"}
-                        to="/saved"
-                        >
-                        Saved
-                        </Link>
-                    </li>
-                    </ul>
-                </div> */}
+                    className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}
+                    to="/"
+                    >
+                    Home
+                    </Link>
+                </li>
+                <li className="nav-item">
+                    <Link
+                    onClick={this.toggleNav}
+                    className={window.location.pathname === "/saved" ? "nav-link active" : "nav-link"}
+                    to="/saved"
+                    >
+                    Saved
+                    </Link>
+                </li>
+                </ul>
+            </div> */}
 
-            </nav>
+          </nav>
         )
     }
 }  
