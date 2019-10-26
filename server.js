@@ -4,6 +4,7 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 const db = require("./models");
 
+
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -30,6 +31,7 @@ let syncOptions = { force: false };
 if (process.env.NODE_ENV === "test") {
   syncOptions.force = true;
 }
+
 
 // Starting the server, syncing our models ------------------------------------/
 db.sequelize.sync(syncOptions).then(function () {
