@@ -26,7 +26,7 @@ function Search({ q, handleInputChange, handleFormSubmit }) {
             type="submit"
             className="btn btn-md btn-secondary"
           >
-            <i class="fas fa-search"></i>
+            <i className="fas fa-search"></i>
             &nbsp;
             Search
             </button>
