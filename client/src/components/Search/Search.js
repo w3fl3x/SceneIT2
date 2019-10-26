@@ -2,7 +2,8 @@ import React from 'react';
 import './Search.css';
 
 function Search({ q, handleInputChange, handleFormSubmit }) {
-    return (
+  return (
+    <div className="search">
       <form>
         <div className="form-group mx-sm-3">
           <label htmlFor="Query">
@@ -25,12 +26,15 @@ function Search({ q, handleInputChange, handleFormSubmit }) {
             type="submit"
             className="btn btn-md btn-secondary"
           >
+            <i class="fas fa-search"></i>
+            &nbsp;
             Search
-          </button>
+            </button>
         </div>
       </form>
-    );
-  }
-  
+    </div>
+  );
+}
+
 
 export default Search;

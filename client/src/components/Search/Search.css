@@ -1,0 +1,10 @@
+form {
+    padding: 20px;
+    width: 70%;
+    display: inline-block;
+}
+
+.search {
+    background-color: #222222;
+    color: #85754d;
+}

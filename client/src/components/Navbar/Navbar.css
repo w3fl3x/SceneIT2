@@ -32,14 +32,22 @@
     font-family: 'Ultra', serif;
 }
 
-.login {
+.nav-item {
     color: #85754d;
     font-size: 15px;
     font-family: 'Ultra', serif;
 }
 
-.login:hover, .name:hover {
+.navbar-link, li {
+    font-size: 15px;
+}
+
+.nav-item:hover, .name:hover, .nav-link:hover {
     transform: scale(1.1);
+}
+
+.navbar-toggler-icon {
+    background-image: #85754d;
 }
 
 @-webkit-keyframes correct {
