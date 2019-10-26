@@ -32,11 +32,11 @@ class Navbar extends Component {
 
     render() {
         return(
-            <nav className='navbar'>
+            <nav className='navbar navbar-expand-lg .navbar-collapse'>
                 <Link className="name" to="/">
                     SceneIT2
                 </Link>
-                <div className="navbar-link">
+                <div className="navbar-link collapse navbar-collapse" id="navbarNav">
                 <Link
                   onClick={this.toggleNav}
                   className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}
