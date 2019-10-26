@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Content from '../components/Content';
 import Item from '../components/Item';
 import "../App.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Saved extends Component {
     
