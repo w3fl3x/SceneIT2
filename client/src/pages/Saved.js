@@ -15,13 +15,10 @@ class Saved extends Component {
       return (
         <div className="App">
           {/* <Navbar /> */}
-          <Header />
+          {/* <Header /> */}
           {/* <Search /> */}
           {/* <Content /> */}
           {/* <Item /> */}
-          <div className="saveCard">
-            <h2>Saved Movies</h2>
-          </div>
           {/* <Footer /> */}
         </div>
       );

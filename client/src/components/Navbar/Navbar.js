@@ -36,7 +36,23 @@ class Navbar extends Component {
                 <Link className="name" to="/">
                     SceneIT2
                 </Link>
-                <button
+                <div className="navbar-link">
+                <Link
+                  onClick={this.toggleNav}
+                  className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}
+                  to="/"
+                  >
+                  Home
+                </Link>
+                <Link
+                  onClick={this.toggleNav}
+                  className={window.location.pathname === "/saved" ? "nav-link active" : "nav-link"}
+                  to="/saved"
+                  >
+                  Saved
+                </Link>
+                </div>
+                {/* <button
                     onClick={this.toggleNav}
                     className="navbar-toggler"
                     data-toggle="collapse"
@@ -55,7 +71,7 @@ class Navbar extends Component {
                         className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}
                         to="/"
                         >
-                        Search
+                        Home
                         </Link>
                     </li>
                     <li className="nav-item">
@@ -68,7 +84,7 @@ class Navbar extends Component {
                         </Link>
                     </li>
                     </ul>
-                </div>
+                </div> */}
 
             </nav>
         )

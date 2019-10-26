@@ -20,7 +20,7 @@ class App extends Component {
           <Header />
           <Search />
           {/* <Content /> */}
-          <Item />
+          {/* <Item /> */}
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/Saved" component={Saved} />
