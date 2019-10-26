@@ -58,13 +58,8 @@ class Home extends Component {
           {/* <Header /> */}
           {/* <Search /> */}
           {/* <Content /> */}
-          {/* <Item /> */}
-          <div className="App-header">
-            <h2>Home Page</h2>
-          </div>
-          <p className="App-intro">
-            Lots of movies!
-          </p>
+          <Item />
+          
           {/* <Footer /> */}
         </div>
       );

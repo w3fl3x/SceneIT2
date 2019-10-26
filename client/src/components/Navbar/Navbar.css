@@ -32,13 +32,17 @@
     font-family: 'Ultra', serif;
 }
 
-.login {
+.nav-item {
     color: #85754d;
     font-size: 15px;
     font-family: 'Ultra', serif;
 }
 
-.login:hover, .name:hover {
+.navbar-link, li {
+    display: inline-block;
+}
+
+.nav-item:hover, .name:hover, .nav-link:hover {
     transform: scale(1.1);
 }
 
