@@ -39,11 +39,15 @@
 }
 
 .navbar-link, li {
-    display: inline-block;
+    font-size: 15px;
 }
 
 .nav-item:hover, .name:hover, .nav-link:hover {
     transform: scale(1.1);
+}
+
+.navbar-toggler-icon {
+    background-image: #85754d;
 }
 
 @-webkit-keyframes correct {

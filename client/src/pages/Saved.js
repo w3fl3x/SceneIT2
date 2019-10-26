@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Content from '../components/Content';
+<<<<<<< HEAD
 // import Item from '../components/Item';
 import "../App.css";
 import axios from "axios";
@@ -49,6 +50,23 @@ class Saved extends Component {
       </div>
     );
   }
+=======
+import Item from '../components/Item';
+import "../App.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+class Saved extends Component {
+    
+    
+    render() {
+      return (
+        <div className="App">
+          <Content />
+          {/* <Item /> */}
+        </div>
+      );
+    }
+>>>>>>> master
 }
 
 export default Saved;
