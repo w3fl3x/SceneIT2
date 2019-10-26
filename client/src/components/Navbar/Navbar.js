@@ -32,12 +32,15 @@ class Navbar extends Component {
 
     render() {
         return(
-          <nav className='navbar navbar-expand-lg .navbar-collapse'>
+          <nav className='navbar navbar-expand-lg collapse .navbar-collapse'>
             <Link className="name" to="/">
               SceneIT2
             </Link>
-            <div className="navbar-link collapse navbar-collapse" id="navbarNav">
-              <ul className="navbar-nav w-100 justify-content-end">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div className="navbar-link collapse navbar-collapse" id="navbarSupportedContent">
+              <ul className="navbar-nav mr-auto w-100 justify-content-end">
                 <Link
                   onClick={this.toggleNav}
                   className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}
@@ -54,6 +57,7 @@ class Navbar extends Component {
                 </Link>
               </ul>
             </div>
+            
             {/* <button
                 onClick={this.toggleNav}
                 className="navbar-toggler"
@@ -92,22 +96,5 @@ class Navbar extends Component {
         )
     }
 }  
-
-// const Navbar = (props) => (
-//     <nav className='navbar'>
-//         <ul>
-//             <li className='name'>
-//                 <a href='/'>SceneIT2</a>
-//             </li>
-            
-//         </ul>
-//         <ul>
-//             <li className="login">
-//                 <a href='/login'>Log In</a>
-//             </li>
-            
-//         </ul>
-//     </nav>
-// );
 
 export default Navbar;
