@@ -2,14 +2,14 @@ const db = require("../models");
 
 module.exports = (app) => {
   // Get all examples
-  app.get("/api/Movies", function (req, res) {
+  app.get("/api/movies", function (req, res) {
     db.movies.findAll({}).then(function (dbMovies) {
       res.json(dbMovies);
     });
   });
 
   // Create a new example
-  app.post("/api/Movies", (req, res) => {
+  app.post("/api/movies", (req, res) => {
     console.log("add new movies test!!!!!!!");
     console.log(req.body);
     db.movies
@@ -27,7 +27,7 @@ module.exports = (app) => {
   });
 
   // Update an example
-  app.put("/api/Movies", (req, res) => {
+  app.put("/api/movies", (req, res) => {
     db.movies
       .update(
         {
