@@ -8,6 +8,8 @@ class Navbar extends Component {
     width: window.innerWidth
   };
 
+  updateWidth = () => {
+    const newState = { width: window.innerWidth };
 
     if (this.state.open && newState.width > 991) {
       newState.open = false;
