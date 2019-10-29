@@ -44,10 +44,11 @@
 
 .nav-item:hover, .name:hover, .nav-link:hover {
     transform: scale(1.1);
+    color: #b7a57a;
 }
 
-.navbar-toggler-icon {
-    background-image: #85754d;
+.navbar-dark, .navbar-toggler-icon, .line, .navbar-toggler {
+    background-color: #85754d !important;
 }
 
 @-webkit-keyframes correct {
