@@ -33,14 +33,14 @@ class Navbar extends Component {
     render() {
         return(
           <nav className='navbar navbar-expand-lg collapse .navbar-collapse'>
-            <Link className="name" to="/">
+            <div className='logo'><Link className="name" to="/">
               SceneIT2
-            </Link>
+            </Link></div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div className="navbar-link collapse navbar-collapse" id="navbarSupportedContent">
-              <ul className="navbar-nav mr-auto w-100 justify-content-end">
+              <ul className="navbar-nav mr-auto w-100 justify-content-end links">
                 <Link
                   onClick={this.toggleNav}
                   className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}

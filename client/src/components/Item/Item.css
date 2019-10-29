@@ -5,6 +5,8 @@
   background: #85754d;
   width: 200px;
   height: auto;
+  margin: 15px;
+  font-family: 'Raleway', sans-serif;
 }
 
 /* Add rounded corners to the top left and the top right corner of the image */

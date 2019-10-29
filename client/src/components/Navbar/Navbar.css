@@ -9,8 +9,7 @@
     font-size: calc(10px + 14 * (100vw - 320px)/ 800);
     z-index: 99;
     white-space: nowrap;
-    font-family: 'Ultra', serif;
-    transition: .2s;
+   transition: .2s;
 }
 
 .navbar ul {
@@ -29,17 +28,16 @@
     text-decoration: none;
     color: #85754d;
     font-weight: 200;
-    font-family: 'Ultra', serif;
+
 }
 
 .nav-item {
     color: #85754d;
-    font-size: 15px;
-    font-family: 'Ultra', serif;
+    font-size: 30px;
 }
 
 .navbar-link, li {
-    font-size: 15px;
+    font-size: 30px;
 }
 
 .nav-item:hover, .name:hover, .nav-link:hover {
@@ -48,6 +46,14 @@
 
 .navbar-toggler-icon {
     background-image: #85754d;
+}
+
+.name{
+    font-family: 'Permanent Marker', cursive;
+}
+
+.links{
+    font-family: 'Staatliches', cursive;
 }
 
 @-webkit-keyframes correct {
