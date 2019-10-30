@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { ButtonToolbar, ToggleButton, ToggleButtonGroup } from "react-bootstrap";import { Container, Row, Col } from "../Grid";
+import { ButtonToolbar, ToggleButton, ToggleButtonGroup } from "react-bootstrap";
+import { Container, Row, Col } from "../Grid";
 import './Content.css';
 
 const Content = () => (

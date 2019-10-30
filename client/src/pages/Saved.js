@@ -1,9 +1,9 @@
 import React, { Component } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from "axios";
 import Content from '../components/Content';
 // import Item from '../components/Item';
 import "../App.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import axios from "axios";
 
 
 class Saved extends Component {

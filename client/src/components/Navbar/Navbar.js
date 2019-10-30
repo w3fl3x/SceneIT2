@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Login from '../../components/Login';
 import './Navbar.css';
 
 class Navbar extends Component {
@@ -55,6 +56,7 @@ class Navbar extends Component {
               >
               Saved
             </Link>
+            <Login />
           </ul>
         </div>
       </nav>

@@ -1,0 +1,16 @@
+#btnGroupDrop1 {
+    color: #85754d;
+    font-size: 15px;
+    font-family: 'Ultra', serif;
+    text-decoration: none;
+    transition: .2s;
+}
+
+.dropdown-menu, .show, .dropdown-toggle {
+    background-color: #222222 !important;
+}
+
+#btnGroupDrop1:hover {
+    transform: scale(1.1);
+    color: #b7a57a;
+}
