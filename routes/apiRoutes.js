@@ -1,9 +1,9 @@
 const db = require("../models");
 
-module.exports = (app) => {
+module.exports = app => {
   // Get all examples
-  app.get("/api/movies", function (req, res) {
-    db.movies.findAll({}).then(function (dbMovies) {
+  app.get("/api/movies", function(req, res) {
+    db.movies.findAll({}).then(function(dbMovies) {
       res.json(dbMovies);
     });
   });
@@ -21,7 +21,7 @@ module.exports = (app) => {
         userID: req.body.userID,
         comment: req.body.comment
       })
-      .then((dbMovies) => {
+      .then(dbMovies => {
         res.json(dbMovies);
       });
   });
@@ -35,11 +35,11 @@ module.exports = (app) => {
         },
         {
           where: {
-            id: req.body.id
+            id: +req.query.id
           }
         }
       )
-      .then((dbMovies) => {
+      .then(dbMovies => {
         res.json(dbMovies);
       });
   });
@@ -56,17 +56,15 @@ module.exports = (app) => {
           }
         }
       )
-      .then((dbMovies) => {
+      .then(dbMovies => {
         res.json(dbMovies);
       });
   });
 
   // Delete an example by id
-  app.delete("/api/Movies/:id", (req, res) => {
-    db.movies
-      .destroy({ where: { id: req.params.id } })
-      .then((dbMovies) => {
-        res.json(dbMovies);
-      });
+  app.delete("/api/Movies/", (req, res) => {
+    db.movies.destroy({ where: { id: +req.query.id } }).then(dbMovies => {
+      res.json(dbMovies);
+    });
   });
 };

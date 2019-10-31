@@ -28,7 +28,7 @@ class Saved extends Component {
       .put("/api/movies/", { seen: true }, { params: { id: id } })
       .then(response => this.loadUserList());
 
-    console.log("Movie marked as seen");
+    console.log("Movie marked as seen " + id);
   };
 
   handleDeleteFilm = id => {
