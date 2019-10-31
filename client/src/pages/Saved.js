@@ -1,19 +1,10 @@
 import React, { Component } from "react";
-<<<<<<< Updated upstream
-import 'bootstrap/dist/css/bootstrap.min.css';
-import axios from "axios";
-import Content from '../components/Content';
-// import Item from '../components/Item';
-import "../App.css";
-
-=======
 import Content from "../components/Content";
 // import Item from '../components/Item';
 import "../App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import { Container, Row, Col } from "../components/Grid";
->>>>>>> Stashed changes
 
 class Saved extends Component {
   state = {
