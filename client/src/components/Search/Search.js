@@ -1,9 +1,34 @@
-import React from 'react';
+import React, { Component } from "react";
+import Item from "../../components/Item";
+import API  from "../../utils/API";
 import './Search.css';
 
-function Search({ q, handleInputChange, handleFormSubmit }) {
-  return (
-    <div className="search">
+class Search extends Component {
+  state = {
+      movies: [],
+      q: "",
+      message: "Search For A Movie!"
+  };
+
+  handleInputChange = event => {
+      const { name, value } = event.target;
+      this.setState({
+          [name]: value
+      });
+  };
+
+  handleFormSubmit = event => {
+      event.preventDefault();
+      console.log("I'm here on submit!")
+      API.getMovies(this.state.q)
+      .then(res => {
+        console.log(res.data);
+      }); 
+  };
+
+  render() {
+    return (
+      <div className="search">
       <form>
         <div className="form-group mx-sm-3">
           <label htmlFor="Query">
@@ -13,16 +38,16 @@ function Search({ q, handleInputChange, handleFormSubmit }) {
             className="form-control"
             id="Title"
             type="text"
-            value={q}
+            value={this.state.q}
             placeholder="Ready Player One"
             name="q"
-            onChange={handleInputChange}
+            onChange={this.handleInputChange}
             required
           />
         </div>
         <div className="center">
           <button
-            onClick={handleFormSubmit}
+            onClick={this.handleFormSubmit}
             type="submit"
             className="btn btn-md btn-secondary"
           >
@@ -33,8 +58,8 @@ function Search({ q, handleInputChange, handleFormSubmit }) {
         </div>
       </form>
     </div>
-  );
+    );
+  }
 }
-
 
 export default Search;

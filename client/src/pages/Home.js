@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import Content from '../components/Content';
 import Item from '../components/Item';
 import "../App.css";
-
+import API  from "../utils/API"
+import Search from "../components/Search";
 class Home extends Component {
     state = {
         movies: [],
@@ -17,39 +18,19 @@ class Home extends Component {
         });
     };
 
-    // getMovies = () => {
-    //     API.getMovies(this.state.q)
-    //         .then(res =>
-    //         this.setState({
-    //             movies: res.data
-    //         })
-    //         )
-    //         .catch(() =>
-    //         this.setState({
-    //             movies: [],
-    //             message: "No New Movies Found, Try a Different Query"
-    //         })
-    //     );
-    // };
-
     handleFormSubmit = event => {
         event.preventDefault();
-        this.getMovies();
+        console.log("I'm here on submit!")
+        API.getMovies(this.state.q)
+        .then(res => {
+          console.log(res.data);
+        }); 
     };
-
-    // handleMovieSave = id => {
-    //     const movie = this.state.movies.find(movie => movie.id === id);
-
-    //     API.saveMovie({
-    //         title: movie.title
-    //     }).then(() => this.getMovies());
-    // }
-    
 
     render() {
       return (
         <div className="App">
-          {/* <Content /> */}
+          {/* <Search q={this.state.q} handleFormSubmit={this.handleFormSubmit} handleInputChange={this.handleInputChange}></Search> */}
           <Item />
         </div>
       );
