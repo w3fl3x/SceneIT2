@@ -42,6 +42,7 @@ class Navbar extends Component {
         </button>
         <div className="navbar-link collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto w-100 justify-content-end link">
+            <Login />
             <Link
               onClick={this.toggleNav}
               className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}
@@ -56,7 +57,6 @@ class Navbar extends Component {
               >
               Saved
             </Link>
-            <Login />
           </ul>
         </div>
       </nav>
