@@ -4,7 +4,6 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 const db = require("./models");
 
-
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -32,9 +31,8 @@ if (process.env.NODE_ENV === "test") {
   syncOptions.force = true;
 }
 
-
 // Starting the server, syncing our models ------------------------------------/
-db.sequelize.sync(syncOptions).then(function () {
+db.sequelize.sync(syncOptions).then(function() {
   app.listen(PORT, () => {
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
