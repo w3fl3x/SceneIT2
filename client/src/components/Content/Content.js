@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+<<<<<<< Updated upstream
 import { ButtonToolbar, ToggleButton, ToggleButtonGroup } from "react-bootstrap";
 import { Container, Row, Col } from "../Grid";
 import './Content.css';
@@ -30,5 +31,24 @@ const Content = () => (
         </Container>
     </>
 );
+=======
+import "./Content.css";
+
+function Content({ id, name, genre, Button1, Button2 }) {
+  return (
+    <ul>
+      <li>
+        <h3>{name}</h3>
+      </li>
+      <li>{genre}</li>
+      <li>
+        <span>
+          <Button1 /> <Button2 />
+        </span>
+      </li>
+    </ul>
+  );
+}
+>>>>>>> Stashed changes
 
 export default Content;

@@ -1,3 +1,14 @@
+<<<<<<< Updated upstream
 .movieList {
     padding-top: 20px;
 }
+=======
+li {
+  list-style: none;
+}
+
+.topList,
+.movieItem {
+  text-align: center;
+}
+>>>>>>> Stashed changes
