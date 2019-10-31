@@ -9,7 +9,7 @@
     font-size: calc(10px + 14 * (100vw - 320px)/ 800);
     z-index: 99;
     white-space: nowrap;
-   transition: .2s;
+    transition: .2s;
 }
 
 .navbar ul {
@@ -28,16 +28,15 @@
     text-decoration: none;
     color: #85754d;
     font-weight: 200;
-
 }
 
 .nav-item {
     color: #85754d;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .navbar-link, li {
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .nav-item:hover, .name:hover, .nav-link:hover {

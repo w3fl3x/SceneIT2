@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Login from '../../components/Login';
 import './Navbar.css';
 
 class Navbar extends Component {
@@ -40,7 +41,7 @@ class Navbar extends Component {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="navbar-link collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav mr-auto w-100 justify-content-end">
+          <ul className="navbar-nav mr-auto w-100 justify-content-end link">
             <Link
               onClick={this.toggleNav}
               className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}
@@ -55,6 +56,7 @@ class Navbar extends Component {
               >
               Saved
             </Link>
+            <Login />
           </ul>
         </div>
       </nav>
