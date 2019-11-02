@@ -8,7 +8,8 @@ import { Container, Row, Col } from "../components/Grid";
 
 class Saved extends Component {
   state = {
-    movies: []
+    movies: [],
+    isInEditMode: false
   };
 
   componentDidMount() {
@@ -18,9 +19,12 @@ class Saved extends Component {
   loadUserList = () => {
     console.log("Loading movie list...");
 
-    axios
-      .get("/api/movies")
-      .then(response => this.setState({ movies: response.data }));
+    axios.get("/api/movies").then(response =>
+      this.setState({
+        movies: response.data,
+        comment: response.data.comment
+      })
+    );
   };
 
   handleSeenFilm = id => {
@@ -39,6 +43,12 @@ class Saved extends Component {
     console.log("Movie has been deleted");
   };
 
+  changeEditMode = comment => {
+    this.setState({
+      isInEditMode: !this.state.isInEditMode
+    });
+  };
+
   render() {
     return (
       <Container>
@@ -49,7 +59,7 @@ class Saved extends Component {
             </Col>
           </Row>
           <Row>
-            <Col size="md-5" className="movieItem">
+            <Col size="md-12" className="movieItem">
               {this.state.movies.map(movies => (
                 <Content
                   id={movies.id}
@@ -71,10 +81,24 @@ class Saved extends Component {
                       Delete
                     </button>
                   )}
+                  comment={movies.comment}
                 />
               ))}
             </Col>
           </Row>
+        </div>
+        <div>
+          Icons made by{" "}
+          <a
+            href="https://www.flaticon.com/authors/roundicons"
+            title="Roundicons"
+          >
+            Roundicons
+          </a>{" "}
+          from{" "}
+          <a href="https://www.flaticon.com/" title="Flaticon">
+            www.flaticon.com
+          </a>
         </div>
       </Container>
     );
