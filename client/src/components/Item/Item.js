@@ -4,9 +4,8 @@ import { Container, Row, Col } from "../Grid";
 
 function Item(props) {
     return (
-        
-            <Row>
-                <Col size="md-4" className="itemCard">
+         <Row>
+            <Col size="md-4" className="itemCard">
                 <div className="card">
                     <img
                     className="card-img-top"
@@ -21,9 +20,8 @@ function Item(props) {
                         className="btn btn-secondary">Add to List</button>
                     </div>
                 </div>
-                </Col>
-            </Row>
-        
+            </Col>
+        </Row>   
     );
 }
 
