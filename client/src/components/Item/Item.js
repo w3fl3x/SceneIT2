@@ -1,23 +1,27 @@
 import React from 'react';
 import './Item.css';
+import { Container, Row, Col } from "../Grid";
 
-function Item() {
+function Item(props) {
     return (
-
-        <div className="card">
-            <img
-            className="card-img-top"
-            src="https://www.sunnxt.com/images/placeholders/placeholder_vertical.gif"
-            alt="Card image cap"></img>
-            <div className="card-body">
-                <h5 className="card-title">Movie Title</h5>
-                <p className="card-text">This is the movie description. What a great movie.</p>
-                <button
-                href="#"
-                className="btn btn-secondary">Add to List</button>
-            </div>
-        </div>
-
+         <Row>
+            <Col size="md-4" className="itemCard">
+                <div className="card">
+                    <img
+                    className="card-img-top"
+                    src={"https://image.tmdb.org/t/p/w185_and_h278_bestv2/" + props.posterPath}
+                    alt="Card image cap"></img>
+                    <div className="card-body">
+                        <h5>{props.title}</h5>
+                        <p>Rating: {props.voteAverage}/10</p>
+                        <p>{props.releaseDate}</p>
+                        <button
+                        href="#"
+                        className="btn btn-secondary">Add to List</button>
+                    </div>
+                </div>
+            </Col>
+        </Row>   
     );
 }
 
