@@ -22,6 +22,13 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.BOOLEAN,
       defaultValue: false
     },
+    user_token: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1, 255]
+      }
+    },
     user_ranking: DataTypes.FLOAT,
     userID: DataTypes.STRING,
     comment: DataTypes.TEXT

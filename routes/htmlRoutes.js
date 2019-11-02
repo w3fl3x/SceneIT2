@@ -17,6 +17,13 @@ module.exports = app => {
     });
   });
 
+  // Load user index page
+  app.get("/", function(req, res) {
+    db.users.findAll({}).then(dbUsers => {
+      res.render("index", { movie: dbUsers });
+    });
+  });
+
   // Render 404 page for any unmatched routes
   app.get("*", (req, res) => {
     res.render("404");

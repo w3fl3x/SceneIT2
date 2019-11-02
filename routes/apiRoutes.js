@@ -67,4 +67,26 @@ module.exports = app => {
       res.json(dbMovies);
     });
   });
+
+  // Get all users
+  app.get("/api/users", function(req, res) {
+    db.users.findAll({}).then(function(dbUsers) {
+      res.json(dbUsers);
+    });
+  });
+  
+  // Create a new user
+  app.post("/api/users", (req, res) => {
+    console.log("add new users test!!!!!!!");
+    console.log(req.body);
+    db.users
+      .create({
+        userID: req.body.userID,
+        user_token: req.body.user_token,
+        user_name: req.body.user_name
+      })
+      .then(dbUsers => {
+        res.json(dbUsers);
+      });
+  });
 };
