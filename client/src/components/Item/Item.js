@@ -4,6 +4,7 @@ import { Container, Row, Col } from "../Grid";
 
 function Item(props) {
   return (
+
     <Row>
       <Col size="md-4" className="itemCard">
         <div className="card cardResults">
@@ -26,6 +27,7 @@ function Item(props) {
         </div>
       </Col>
     </Row>
+
   );
 }
 
