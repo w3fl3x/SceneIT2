@@ -15,7 +15,9 @@ function Content({ name, genre, Button1, Button2, comment }) {
             ></img>
           </div>
           <div className="col-sm-8 text-center">
-            <h3 className="card-title">{name}</h3>
+            <h3 className="card-title">
+              {name + " - "} <Button1 /> <Button2 />{" "}
+            </h3>
             <p className="card-text">{"Genre: " + genre}</p>
             <div>
               <span className="starRating">
@@ -93,10 +95,6 @@ function Content({ name, genre, Button1, Button2, comment }) {
             </div>
             <br />
             <p>{comment}</p>
-            <span>
-              <Button1 /> <Button2 />
-            </span>
-            <br />
           </div>
         </div>
       </div>
