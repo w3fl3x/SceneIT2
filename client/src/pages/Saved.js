@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import Content from "../components/Content";
-// import Item from '../components/Item';
+import Comments from "../components/Comments";
 import "../App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
@@ -61,24 +61,26 @@ class Saved extends Component {
           <Row>
             <Col size="md-12" className="movieItem">
               {this.state.movies.map(movies => (
-                <Content
-                  id={movies.id}
-                  name={movies.movie_name}
-                  genre={movies.genre}
-                  Button1={() => (
-                    <i
-                      onClick={() => this.handleSeenFilm(movies.id)}
-                      className="fas fa-film"
-                    ></i>
-                  )}
-                  Button2={() => (
-                    <i
-                      onClick={() => this.handleDeleteFilm(movies.id)}
-                      className="far fa-trash-alt"
-                    ></i>
-                  )}
-                  comment={movies.comment}
-                />
+                <Fragment>
+                  <Content
+                    id={movies.id}
+                    name={movies.movie_name}
+                    genre={movies.genre}
+                    Button1={() => (
+                      <i
+                        onClick={() => this.handleSeenFilm(movies.id)}
+                        className="fas fa-film"
+                      ></i>
+                    )}
+                    Button2={() => (
+                      <i
+                        onClick={() => this.handleDeleteFilm(movies.id)}
+                        className="far fa-trash-alt"
+                      ></i>
+                    )}
+                    comment={movies.comment}
+                  />
+                </Fragment>
               ))}
             </Col>
           </Row>
