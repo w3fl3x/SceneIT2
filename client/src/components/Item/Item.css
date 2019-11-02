@@ -1,8 +1,7 @@
-.card {
+.cardResults {
   width: 200px;
-  font-family: 'Raleway', sans-serif;
-  margin: 15px; 
-
+  font-family: "Raleway", sans-serif;
+  margin: 15px;
 }
 
 /* Add rounded corners to the top left and the top right corner of the image */
