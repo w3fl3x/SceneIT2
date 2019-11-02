@@ -44,7 +44,7 @@ module.exports = app => {
       });
   });
 
-  app.put("/api/Movies/:id", (req, res) => {
+  app.put("/api/Movies/", (req, res) => {
     db.movies
       .update(
         {
@@ -52,7 +52,7 @@ module.exports = app => {
         },
         {
           where: {
-            id: req.body.id
+            id: +req.query.id
           }
         }
       )

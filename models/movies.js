@@ -1,4 +1,4 @@
-module.exports = function (sequelize, DataTypes) {
+module.exports = function(sequelize, DataTypes) {
   let Movies = sequelize.define("movies", {
     movie_name: {
       type: DataTypes.STRING,
@@ -24,7 +24,8 @@ module.exports = function (sequelize, DataTypes) {
     },
     user_ranking: DataTypes.FLOAT,
     userID: DataTypes.STRING,
-    comment: DataTypes.TEXT
+    comment: DataTypes.TEXT,
+    poster: DataTypes.STRING
   });
   return Movies;
 };
