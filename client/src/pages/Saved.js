@@ -66,20 +66,16 @@ class Saved extends Component {
                   name={movies.movie_name}
                   genre={movies.genre}
                   Button1={() => (
-                    <button
+                    <i
                       onClick={() => this.handleSeenFilm(movies.id)}
-                      className="btn btn-danger ml-2"
-                    >
-                      Seen
-                    </button>
+                      className="fas fa-film"
+                    ></i>
                   )}
                   Button2={() => (
-                    <button
+                    <i
                       onClick={() => this.handleDeleteFilm(movies.id)}
-                      className="btn btn-danger ml-2"
-                    >
-                      Delete
-                    </button>
+                      className="far fa-trash-alt"
+                    ></i>
                   )}
                   comment={movies.comment}
                 />
