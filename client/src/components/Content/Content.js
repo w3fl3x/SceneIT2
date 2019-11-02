@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Content.css";
 
-function Content({ name, genre, Button1, Button2, comment }) {
+function Content({ id, name, genre, Button1, Button2, comment }) {
   return (
     <div className="card contentCard">
       <div className="card-body">
@@ -94,7 +94,7 @@ function Content({ name, genre, Button1, Button2, comment }) {
               </span>
             </div>
             <br />
-            <p>{comment}</p>
+            <p>{"User Review: " + comment}</p>
           </div>
         </div>
       </div>
