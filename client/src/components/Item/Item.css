@@ -2,6 +2,7 @@
   width: 200px;
   font-family: "Raleway", sans-serif;
   margin: 15px;
+  transition: .2s;
 }
 
 /* Add rounded corners to the top left and the top right corner of the image */
@@ -9,6 +10,8 @@ img {
   border-radius: 5px 5px 0 0;
 }
 
-/* i{
-    display: inline;
-} */
+.cardResults:hover {
+  transform: scale(1.1);
+  border-color: #b7a57a;
+  z-index: 99;
+}

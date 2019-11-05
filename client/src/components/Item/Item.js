@@ -20,9 +20,12 @@ function Item(props) {
       summary: props.summary,
       user_ranking: ranking
     });
+
+    
   }
 
   return (
+    
     <Row>
       <Col size="md-4" className="itemCard">
         <div className="card cardResults">
@@ -32,7 +35,8 @@ function Item(props) {
               "https://image.tmdb.org/t/p/w185_and_h278_bestv2/" +
               props.posterPath
             }
-            alt="Card image cap"
+            onError={(e)=>{e.target.onerror = null; e.target.src="https://i.ibb.co/TRT0BJK/noposter.png"}}
+            alt="movie poster"
           ></img>
           <div className="card-body">
             <h5>{props.title}</h5>
