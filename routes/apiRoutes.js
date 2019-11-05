@@ -16,7 +16,8 @@ module.exports = app => {
         movie_name: req.body.movie_name,
         year: req.body.year,
         poster: req.body.poster,
-        summary: req.body.summary
+        summary: req.body.summary,
+        user_ranking: req.body.user_ranking
       })
       .then(dbMovies => {
         res.json(dbMovies);
@@ -29,6 +30,24 @@ module.exports = app => {
       .update(
         {
           seen: true
+        },
+        {
+          where: {
+            id: +req.query.id
+          }
+        }
+      )
+      .then(dbMovies => {
+        res.json(dbMovies);
+      });
+  });
+
+  app.put("/api/movies/ranking", (req, res) => {
+    console.log(req.body.user_ranking + " " + req.query.id);
+    db.movies
+      .update(
+        {
+          user_ranking: +req.body.user_ranking
         },
         {
           where: {
