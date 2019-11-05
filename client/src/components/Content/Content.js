@@ -1,24 +1,18 @@
 import React, { Component } from "react";
 import "./Content.css";
 
-function Content({ id, name, genre, Button1, Button2, comment }) {
+function Content({ poster, name, genre, Button1, Button2, summary }) {
   return (
     <div className="card contentCard">
       <div className="card-body">
         <div className="row">
           <div className="col-sm-4 text-center">
-            <img
-              className=""
-              src="//placehold.it/200"
-              alt="sans"
-              width="200px"
-            ></img>
+            <img className="" src={poster} alt="sans" width="200px"></img>
           </div>
           <div className="col-sm-8 text-center">
             <h3 className="card-title">
               {name + " - "} <Button1 /> <Button2 />{" "}
             </h3>
-            <p className="card-text">{"Genre: " + genre}</p>
             <div>
               <span className="starRating">
                 <input
@@ -94,7 +88,7 @@ function Content({ id, name, genre, Button1, Button2, comment }) {
               </span>
             </div>
             <br />
-            <p>{"User Review: " + comment}</p>
+            <p>{"Oveview: " + summary}</p>
           </div>
         </div>
       </div>
