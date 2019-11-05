@@ -11,15 +11,12 @@ module.exports = app => {
   // Create a new example
   app.post("/api/movies", (req, res) => {
     console.log("add new movies test!!!!!!!");
-    console.log(req.body);
     db.movies
       .create({
         movie_name: req.body.movie_name,
-        genre: req.body.genre,
         year: req.body.year,
-        userRanking: req.body.user_ranking,
-        userID: req.body.userID,
-        comment: req.body.comment
+        poster: req.body.poster,
+        summary: req.body.summary
       })
       .then(dbMovies => {
         res.json(dbMovies);
@@ -74,7 +71,7 @@ module.exports = app => {
       res.json(dbUsers);
     });
   });
-  
+
   // Create a new user
   app.post("/api/users", (req, res) => {
     console.log("add new users test!!!!!!!");

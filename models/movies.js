@@ -9,7 +9,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     genre: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       validate: {
         len: [1, 255]
       }
@@ -24,8 +24,8 @@ module.exports = function(sequelize, DataTypes) {
     },
     user_token: DataTypes.STRING,
     user_ranking: DataTypes.FLOAT,
-    userID: DataTypes.STRING,
-    comment: DataTypes.TEXT
+    poster: DataTypes.STRING,
+    summary: DataTypes.TEXT
   });
   return Movies;
 };

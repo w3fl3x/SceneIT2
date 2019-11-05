@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import Content from "../components/Content";
-import Comments from "../components/Comments";
+// import Comments from "../components/Comments";
 import "../App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
@@ -21,8 +21,7 @@ class Saved extends Component {
 
     axios.get("/api/movies").then(response =>
       this.setState({
-        movies: response.data,
-        comment: response.data.comment
+        movies: response.data
       })
     );
   };
@@ -43,12 +42,6 @@ class Saved extends Component {
     console.log("Movie has been deleted");
   };
 
-  changeEditMode = comment => {
-    this.setState({
-      isInEditMode: !this.state.isInEditMode
-    });
-  };
-
   render() {
     return (
       <Container>
@@ -66,6 +59,7 @@ class Saved extends Component {
                     id={movies.id}
                     name={movies.movie_name}
                     genre={movies.genre}
+                    poster={movies.poster}
                     Button1={() => (
                       <i
                         onClick={() => this.handleSeenFilm(movies.id)}
@@ -78,7 +72,7 @@ class Saved extends Component {
                         className="far fa-trash-alt"
                       ></i>
                     )}
-                    comment={movies.comment}
+                    summary={movies.summary}
                   />
                 </Fragment>
               ))}
