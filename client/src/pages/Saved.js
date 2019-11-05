@@ -5,6 +5,7 @@ import "../App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import { Container, Row, Col } from "../components/Grid";
+import Stars from "../components/StarRanking";
 
 class Saved extends Component {
   state = {
@@ -55,25 +56,28 @@ class Saved extends Component {
             <Col size="md-12" className="movieItem">
               {this.state.movies.map(movies => (
                 <Fragment>
-                  <Content
-                    id={movies.id}
-                    name={movies.movie_name}
-                    genre={movies.genre}
-                    poster={movies.poster}
-                    Button1={() => (
-                      <i
-                        onClick={() => this.handleSeenFilm(movies.id)}
-                        className="fas fa-film"
-                      ></i>
-                    )}
-                    Button2={() => (
-                      <i
-                        onClick={() => this.handleDeleteFilm(movies.id)}
-                        className="far fa-trash-alt"
-                      ></i>
-                    )}
-                    summary={movies.summary}
-                  />
+                  <div className="card card-body contentCard">
+                    <Content
+                      id={movies.id}
+                      name={movies.movie_name}
+                      genre={movies.genre}
+                      poster={movies.poster}
+                      Button1={() => (
+                        <i
+                          onClick={() => this.handleSeenFilm(movies.id)}
+                          className="fas fa-film"
+                        ></i>
+                      )}
+                      Button2={() => (
+                        <i
+                          onClick={() => this.handleDeleteFilm(movies.id)}
+                          className="far fa-trash-alt"
+                        ></i>
+                      )}
+                      summary={movies.summary}
+                    />
+                    <Stars id={movies.id} rating={movies.user_ranking} />
+                  </div>
                 </Fragment>
               ))}
             </Col>

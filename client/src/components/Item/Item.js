@@ -9,17 +9,16 @@ function Item(props) {
       "https://image.tmdb.org/t/p/w185_and_h278_bestv2/" + props.posterPath;
     let str = props.releaseDate;
     let releaseYear = str.substring(0, 4);
-    console.log(poster);
-    console.log(str);
-    console.log(releaseYear);
-    console.log(props.title);
-    console.log(props.summary);
+
+    let ranking = Math.round(props.voteAverage);
+    console.log(ranking);
 
     axios.post("/api/movies/", {
       movie_name: props.title,
       year: releaseYear,
       poster: poster,
-      summary: props.summary
+      summary: props.summary,
+      user_ranking: ranking
     });
 
     
