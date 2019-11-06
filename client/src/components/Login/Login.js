@@ -1,8 +1,11 @@
 import React, { Component } from "react";
-// import { Link } from "react-router-dom";
 import './Login.css';
+
 class Login extends Component {
   
+    state={
+        isSignedIn: false
+    }
   
   componentDidMount(){
     (function() {
@@ -27,6 +30,9 @@ googleLogin = () => {
         requestvisibleactions: "http://schema.org/AddAction",
         scope: "https://www.googleapis.com/auth/plus.login email"
     });
+    this.setState((state) => {
+        return{isSignedIn: true}
+    })
 }
 
 googleSignInCallback = (e) => {
