@@ -7,6 +7,8 @@ import Saved from "./pages/Saved";
 import Footer from './components/Footer';
 import "./App.css";
 
+require("dotenv").config();
+
 class App extends Component {
   render() {
     return (

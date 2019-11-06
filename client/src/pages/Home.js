@@ -6,7 +6,8 @@ import "../components/Search/Search.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { CardDeck } from "react-bootstrap";
 import axios from "axios";
-import API_KEY from '../utils/config';
+
+require("dotenv").config();
 
 class Home extends Component {
   state = {
@@ -19,7 +20,7 @@ class Home extends Component {
   }
   
   loadUserList = () => {
-    axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US
+    axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US
     route*`).then(res => {
       console.log(res.data);
       this.setState({ movies: res.data.results });
