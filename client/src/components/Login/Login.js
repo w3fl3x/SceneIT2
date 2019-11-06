@@ -1,21 +1,11 @@
 import React, { Component } from "react";
 import './Login.css';
-<<<<<<< Updated upstream
-
-=======
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
->>>>>>> Stashed changes
 class Login extends Component {
   
     state={
         isSignedIn: false
-<<<<<<< Updated upstream
-    }
-  
-=======
       }
-
->>>>>>> Stashed changes
   componentDidMount(){
     (function() {
         var e = document.createElement("script");
@@ -30,7 +20,6 @@ logoutSuccess = () => {
     this.setState({isSignedIn: false})
     console.log(this.state)
 }
-
 //Triggering login for google
 googleLogin = () => {
     let response = null;
@@ -43,16 +32,9 @@ googleLogin = () => {
         requestvisibleactions: "http://schema.org/AddAction",
         scope: "https://www.googleapis.com/auth/plus.login email"
     });
-<<<<<<< Updated upstream
-    this.setState((state) => {
-        return{isSignedIn: true}
-    })
-=======
     this.setState({isSignedIn: true})
     console.log(this.state, 'After Signed In!')
->>>>>>> Stashed changes
 }
-
 googleSignInCallback = (e) => {
     console.log( e )
     if (e["status"]["signed_in"]) {
@@ -67,7 +49,6 @@ googleSignInCallback = (e) => {
         console.log('Oops... Error occured while importing data')
     }
 }
-
 getUserGoogleProfile = accesstoken => {
     var e = window.gapi.client.plus.people.get({
         userId: "me"
@@ -86,12 +67,10 @@ getUserGoogleProfile = accesstoken => {
         }
     }.bind(this));
 }
-
 responseGoogle = (response) => {
     console.log(response) //client information 
     this.setState({isSignedIn: true})
 }
-
  render() {
      console.log(this.state)
    return(
@@ -110,7 +89,6 @@ responseGoogle = (response) => {
                 buttonText="Logout"
                 onLogoutSuccess={ this.logoutSuccess}
                 />
-
         }
        {/* <div className="g-signin2" data-onsuccess="onSignIn" data-theme="dark" onClick= { this.googleLogin }
        data-redirect='https://sceneit2-h.herokuapp.com/'></div> */}
