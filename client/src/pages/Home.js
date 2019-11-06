@@ -6,7 +6,7 @@ import "../components/Search/Search.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { CardDeck } from "react-bootstrap";
 import axios from "axios";
-import API_KEY from '../utils/config';
+import API_KEY from "../utils/config";
 
 class Home extends Component {
   state = {
@@ -17,13 +17,17 @@ class Home extends Component {
   componentDidMount() {
     this.loadUserList();
   }
-  
+
   loadUserList = () => {
-    axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US
-    route*`).then(res => {
-      console.log(res.data);
-      this.setState({ movies: res.data.results });
-  })
+    axios
+      .get(
+        `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US
+    route*`
+      )
+      .then(res => {
+        console.log(res.data);
+        this.setState({ movies: res.data.results });
+      });
   };
 
   handleInputChange = event => {
@@ -48,8 +52,19 @@ class Home extends Component {
           <form>
             <div className="form-group mx-sm-3">
               <label htmlFor="Query">
-                <strong>Movie Search</strong>
+                <h4>
+                  <strong>Movie Search</strong>
+                </h4>
               </label>
+              <p>
+                Powered by:{" "}
+                <a
+                  href="https://www.themoviedb.org/"
+                  style={{ color: "white", textDecoration: "none" }}
+                >
+                  The Movie DB
+                </a>
+              </p>
               <input
                 className="form-control"
                 id="Title"

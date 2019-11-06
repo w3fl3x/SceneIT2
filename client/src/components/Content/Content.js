@@ -1,7 +1,7 @@
 import React from "react";
 import "./Content.css";
 
-function Content({ poster, name, ranking, Button1, Button2, summary }) {
+function Content({ poster, name, Button1, Button2, summary }) {
   return (
     <div className="row">
       <div className="col-sm-4 text-center">
