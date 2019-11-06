@@ -13,5 +13,5 @@ img {
 .cardResults:hover {
   transform: scale(1.1);
   border-color: #b7a57a;
-  z-index: 99;
+  z-index: 50;
 }
