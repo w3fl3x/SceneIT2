@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import './Login.css';
-
+import { GoogleLogin, GoogleLogout } from 'react-google-login';
 class Login extends Component {
   
     state={
         isSignedIn: false
-    }
-  
+      }
   componentDidMount(){
     (function() {
         var e = document.createElement("script");
@@ -17,7 +16,10 @@ class Login extends Component {
         t.parentNode.insertBefore(e, t)
     })();    
 }
-
+logoutSuccess = () => {
+    this.setState({isSignedIn: false})
+    console.log(this.state)
+}
 //Triggering login for google
 googleLogin = () => {
     let response = null;
@@ -30,11 +32,9 @@ googleLogin = () => {
         requestvisibleactions: "http://schema.org/AddAction",
         scope: "https://www.googleapis.com/auth/plus.login email"
     });
-    this.setState((state) => {
-        return{isSignedIn: true}
-    })
+    this.setState({isSignedIn: true})
+    console.log(this.state, 'After Signed In!')
 }
-
 googleSignInCallback = (e) => {
     console.log( e )
     if (e["status"]["signed_in"]) {
@@ -49,7 +49,6 @@ googleSignInCallback = (e) => {
         console.log('Oops... Error occured while importing data')
     }
 }
-
 getUserGoogleProfile = accesstoken => {
     var e = window.gapi.client.plus.people.get({
         userId: "me"
@@ -68,16 +67,31 @@ getUserGoogleProfile = accesstoken => {
         }
     }.bind(this));
 }
-
+responseGoogle = (response) => {
+    console.log(response) //client information 
+    this.setState({isSignedIn: true})
+}
  render() {
+     console.log(this.state)
    return(
      <div className="btn-group" role="group">
-       <button id="btnGroupDrop1" type="button" className="btn btn-link " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+       <button id="btnGroupDrop1" type="button" className="btn btn-link " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
          <i className="fas fa-sign-in-alt"></i>
        </button>
        <div className="dropdown-menu" aria-labelledby="btnGroupDrop1">
-       <div className="g-signin2" data-onsuccess="onSignIn" data-theme="dark"
-       data-redirect='https://sceneit2-h.herokuapp.com/'></div>
+        { !this.state.isSignedIn
+            ?  <GoogleLogin 
+                clientId="716076722671-f0hcpl5nivs848o9blga7jnntja8sq63.apps.googleusercontent.com"
+                buttonText="Login"
+                onSuccess={ this.responseGoogle }
+                />
+            : <GoogleLogout
+                buttonText="Logout"
+                onLogoutSuccess={ this.logoutSuccess}
+                />
+        }
+       {/* <div className="g-signin2" data-onsuccess="onSignIn" data-theme="dark" onClick= { this.googleLogin }
+       data-redirect='https://sceneit2-h.herokuapp.com/'></div> */}
        </div>
      </div>
    )
