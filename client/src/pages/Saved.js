@@ -49,7 +49,7 @@ class Saved extends Component {
         <div className="App">
           <Row>
             <Col size="md-12" className="topList">
-              <h2>Top Movies</h2>
+              <h1 className="savedTitle">Top Movies</h1>
             </Col>
           </Row>
           <Row>

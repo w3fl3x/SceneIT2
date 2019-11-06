@@ -19,29 +19,39 @@
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 button {
   margin: 5px;
 }
 
-body{
+body {
   overflow-x: hidden;
   width: 100%;
 }
 
 .fa-film {
   color: #85754d;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .fa-trash-alt {
-  color: red;
-  transition: .2s;
+  color: #85754d;
+  transition: 0.2s;
 }
 
-.fa-film:hover, .fa-trash-alt:hover {
+.fa-film:hover,
+.fa-trash-alt:hover {
   transform: scale(1.1);
+}
+
+.savedTitle {
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
 }

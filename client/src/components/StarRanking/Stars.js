@@ -30,7 +30,7 @@ class Stars extends React.Component {
       <div className="row">
         <div className="col-sm-4 text-center"></div>
         <div className="col-sm-8 text-center">
-          <h4>User Ranking: {rating}</h4>
+          <h4 className="rankingStyle">User Ranking: {rating}</h4>
           <StarRatingComponent
             name="rate1"
             starCount={10}
