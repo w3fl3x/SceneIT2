@@ -9,8 +9,7 @@ import Stars from "../components/StarRanking";
 
 class Saved extends Component {
   state = {
-    movies: [],
-    isInEditMode: false
+    movies: []
   };
 
   componentDidMount() {
@@ -62,6 +61,7 @@ class Saved extends Component {
                       name={movies.movie_name}
                       genre={movies.genre}
                       poster={movies.poster}
+                      seen={movies.seen}
                       Button1={() => (
                         <i
                           onClick={() => this.handleSeenFilm(movies.id)}

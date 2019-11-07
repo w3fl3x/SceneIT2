@@ -1,7 +1,16 @@
 import React from "react";
 import "./Content.css";
 
-function Content({ poster, name, Button1, Button2, summary }) {
+function Content({ poster, name, Button1, Button2, summary, seen }) {
+  let flagged = "";
+
+  if (seen) {
+    flagged =
+      "Now that you've seen this movie, click on the stars to add your custom rating below!";
+  } else {
+    flagged = "";
+  }
+
   return (
     <div className="row">
       <div className="col-sm-4 text-center">
@@ -12,6 +21,9 @@ function Content({ poster, name, Button1, Button2, summary }) {
           {name + " - "} <Button1 /> <Button2 />{" "}
         </h3>
         <p>{summary}</p>
+        <div>
+          <h4>{flagged}</h4>
+        </div>
       </div>
     </div>
   );
